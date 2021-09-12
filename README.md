@@ -1,5 +1,5 @@
 # uupdump_cli
-#### A simple command-line-interface for UUPDump written in Python that utilizes the UUPDump JSON API.
+#### A simple in-development command-line-interface for UUPDump written in Python that utilizes the UUPDump JSON API.
 
 ## Requirements
 #### Developed and tested on Python 3.8
