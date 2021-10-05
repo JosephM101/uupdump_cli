@@ -25,4 +25,4 @@ To install requirements, run `pip install requests` in your terminal of choice.
   Accepted input: `CORE`, `COREN`, `PROFESSIONAL`, `PROFESSIONALN
   
   
-  For example, `uupdump_cli.py Dev amd64 PROFESSIONAL` would automatically download the latest update package from the specified update ring, and automatically start the download process.
+  For example, `uupdump_cli.py Dev amd64 PROFESSIONAL` would automatically download the latest update package from the Dev channel, and start the download process.
