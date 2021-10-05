@@ -3,7 +3,7 @@
 
 ## Requirements
 #### Developed and tested on Python 3.8
-To install requirements, run `pip install requests` in your terminal of choice.
+To install requirements, run `pip install requests` in your terminal of choice. If you get an error like `pip: command not found`, then try `pip3`instead.
 
 ## How to use
 
