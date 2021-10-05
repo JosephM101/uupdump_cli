@@ -8,7 +8,17 @@ from sys import platform
 # Definitions
 API_URL = "https://api.uupdump.net/"
 #DOWNLOAD_PATH = os.getcwd()
-DOWNLOAD_PATH = os.path.dirname(os.path.realpath(__file__)) + "\\"
+
+if platform == "linux" or platform == "linux2":
+    # linux
+    DOWNLOAD_PATH = os.path.dirname(os.path.realpath(__file__)) + "/"
+elif platform == "darwin":
+    # OS X
+    DOWNLOAD_PATH = os.path.dirname(os.path.realpath(__file__)) + "/"
+elif platform == "win32":
+    # Windows...
+    DOWNLOAD_PATH = os.path.dirname(os.path.realpath(__file__)) + "\\"
+
 
 def HomePage():
     print("\n \nUUP Dump --------------------")
@@ -132,7 +142,16 @@ def extract(file, execute):
     if(file != Empty):
         sz = ZipFile(file)
         sz.extractall(os.path.splitext(file)[0])
-        os.startfile(os.path.join(os.path.splitext(file)[0], getExFileForOS()))
+        directory = os.path.splitext(file)[0]
+        filepath = os.path.join(os.path.splitext(file)[0], getExFileForOS())
+        if platform == "linux" or platform == "linux2" or platform == "darwin":
+            # Linux or OS X
+            os.system("chmod -R +rx " + directory)
+            os.system(filepath)
+        elif platform == "win32":
+            # Windows...
+            os.startfile(filepath)
+       
 
 def AskYesNo(prompt):
     regexFN = re.compile('^(?:y|n)$', re.IGNORECASE)
