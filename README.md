@@ -1,8 +1,9 @@
 # uupdump_cli
-#### A simple in-development command-line-interface for UUPDump written in Python that utilizes the UUPDump JSON API.
+#### A simple experimental command-line-interface for UUP Dump written in Python that uses the UUP Dump JSON API.
 
 ## Requirements
-#### Developed and tested on Python 3.8
+**Developed and tested on Python 3.8**
+
 To install requirements, run `pip install requests` in your terminal of choice. If you get an error like `pip: command not found`, then try `pip3`instead.
 
 
