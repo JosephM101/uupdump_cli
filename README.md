@@ -15,23 +15,20 @@ All downloaded files will be saved in the same directory as the python script.
 
 # One-Line Run
 
-To automate the download and install process, you need to call the script from a terminal. From that terminal, you need to enter the following:
+To automate the download and execution process, you need to call the script from a terminal. In that terminal, enter the following:
 `python uupdump_cli.py [arguments]` See [Arguments](#arguments) below.
 
 ## Arguments
 
 #### You can pass through arguments to the script to make the download process autonomous, but they must all be used for proper functionality. The arguments are as follows, respectively:
 
-- `Ring`
-  
+### **Ring**
   Accepted input: `Dev`, `Beta`, `ReleasePreview`, `Retail`
   
-- `Architecture`
-  
+### **Architecture**
   Accepted input: `amd64`, `x86`, `arm64`, `all`
   
-- `Edition`
-
+### **Edition**
   Accepted input: `CORE`, `COREN`, `PROFESSIONAL`, `PROFESSIONALN
   
   
