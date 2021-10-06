@@ -9,9 +9,10 @@ To install requirements, run `pip install requests` in your terminal of choice. 
 
 #### Simply run the script, and if UUPDump is not down (that happens sometimes), the script will display instructions to help you quickly get the update package you need.
 
-## Arguments
+## One-line run
 
-#### You can pass through arguments to the script to make it autonomous, but they must all be used. The arguments are as follows (in order):
+#### You can pass through arguments to the script to make the download process autonomous, but they must all be used for proper functionality. The arguments are as follows, respectively:
+
 - `Ring`
   
   Accepted input: `Dev`, `Beta`, `ReleasePreview`, `Retail`
