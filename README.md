@@ -5,11 +5,19 @@
 #### Developed and tested on Python 3.8
 To install requirements, run `pip install requests` in your terminal of choice. If you get an error like `pip: command not found`, then try `pip3`instead.
 
+
 ## How to use
 
 #### Simply run the script, and if UUPDump is not down (that happens sometimes), the script will display instructions to help you quickly get the update package you need.
+All downloaded files will be saved in the same directory as the python script.
 
-## One-line run
+
+# One-Line Run
+
+To automate the download and install process, you need to call the script from a terminal. From that terminal, you need to enter the following:
+`python uupdump_cli.py [arguments]` See [Arguments](#arguments) below.
+
+### Arguments
 
 #### You can pass through arguments to the script to make the download process autonomous, but they must all be used for proper functionality. The arguments are as follows, respectively:
 
