@@ -30,3 +30,41 @@
       with:
         name: macos
         path: build/
+
+# E2
+
+          
+  build_macos:
+    runs-on: macos-10.15
+    env:
+      # We need the official Python, because the GA ones only support newer macOS versions
+      # The deployment target is picked up by the Python build tools automatically
+      PYTHON_VERSION: 3.9.1
+      MACOSX_DEPLOYMENT_TARGET: 10.9
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Get Python
+      run: curl https://www.python.org/ftp/python/${PYTHON_VERSION}/python-${PYTHON_VERSION}-macosx10.9.pkg -o "python.pkg"
+    - name: Install Python
+      # Need to copy the pkg because the installer command removes it, breaking the cache
+      run: |
+        sudo installer -pkg python.pkg -target /
+          
+    - name: Install Nuitka
+      run: pip3 install Nuitka
+        
+    - name: Install dependencies
+      run: pip3 install requests py7zr
+      
+    - name: Compile
+      run: mkdir build && python3 -m nuitka --follow-imports --onefile --assume-yes-for-downloads --output-dir="build/" --remove-output uupdump_cli.py
+       
+    - name: Compile standalone
+      run: mkdir build/standalone && python3 -m nuitka --follow-imports --standalone --assume-yes-for-downloads --output-dir="build/standalone" uupdump_cli.py
+        
+    - name: Publish artifacts
+      uses: actions/upload-artifact@v2.2.4
+      with:
+        name: macos
+        path: build/
