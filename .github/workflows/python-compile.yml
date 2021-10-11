@@ -26,12 +26,15 @@ jobs:
 
       - name: Compile
         run: python -m nuitka --follow-imports --onefile --assume-yes-for-downloads uupdump_cli.py
+      
+      - name: List
+        run: ls
         
       - name: Publish artifacts
         uses: actions/upload-artifact@v2.2.4
         with:
           name: linux
-          path: uupdump_cli.dist/
+          path: uupdump_cli.build/
           
   build_windows:
     runs-on: windows-latest
@@ -52,6 +55,9 @@ jobs:
 
       - name: Compile
         run: python -m nuitka --follow-imports --onefile --assume-yes-for-downloads uupdump_cli.py
+      
+      - name: List
+        run: dir
         
       - name: Publish artifacts
         uses: actions/upload-artifact@v2.2.4
