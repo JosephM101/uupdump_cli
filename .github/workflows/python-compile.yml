@@ -1,4 +1,4 @@
-name: Compile
+name: Compile Python script
 
 on:
   push:
@@ -19,4 +19,10 @@ jobs:
           python-version: 3.8
           
       - name: Install Nuitka
-        run: python -m nuitka uupdump_cli.py
+        run: pip install Nuitka
+        
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Compile
+        run: python -m nuitka --follow-imports --standalone uupdump_cli.py
