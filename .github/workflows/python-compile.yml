@@ -25,16 +25,13 @@ jobs:
         run: pip install requests
 
       - name: Compile
-        run: python -m nuitka --follow-imports --onefile --assume-yes-for-downloads uupdump_cli.py
-      
-      - name: List
-        run: ls
+        run: python -m nuitka --follow-imports --onefile --assume-yes-for-downloads --output-dir="build/" uupdump_cli.py
         
       - name: Publish artifacts
         uses: actions/upload-artifact@v2.2.4
         with:
           name: linux
-          path: uupdump_cli.build/
+          path: build/
           
   build_windows:
     runs-on: windows-latest
@@ -54,13 +51,10 @@ jobs:
         run: pip install requests
 
       - name: Compile
-        run: python -m nuitka --follow-imports --onefile --assume-yes-for-downloads uupdump_cli.py
-      
-      - name: List
-        run: dir
+        run: python -m nuitka --follow-imports --onefile --assume-yes-for-downloads --output-dir="build/" uupdump_cli.py
         
       - name: Publish artifacts
         uses: actions/upload-artifact@v2.2.4
         with:
           name: windows
-          path: uupdump_cli.dist/
+          path: build/
