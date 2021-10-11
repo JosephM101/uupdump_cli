@@ -5,24 +5,32 @@ import requests, re, os
 from requests.models import HTTPError
 from sys import platform
 
+# Welcome
+print("UUPDump CLI\n")
+
 # Definitions
 API_URL = "https://api.uupdump.net/"
-
 DOWNLOAD_PATH = None
 
 # Figure out what OS the script is running on, and use that to determine the execution path
+OS_StringName = "OS: "
 if platform == "linux" or platform == "linux2":
-    # linux
+    # Linux
+    OS_StringName += "Linux ("+platform+")"
     DOWNLOAD_PATH = os.path.dirname(os.path.realpath(__file__)) + "/"
 elif platform == "darwin":
     # OS X
+    OS_StringName += "macOS X ("+platform+")"
     DOWNLOAD_PATH = os.path.dirname(os.path.realpath(__file__)) + "/"
 elif platform == "win32":
-    # Windows...
+    # Windows
+    OS_StringName += "Windows ("+platform+")"
     DOWNLOAD_PATH = os.path.dirname(os.path.realpath(__file__)) + "\\"
-    
+
+print (OS_StringName) # Print the OS name
+
 # Print the path where downloaded files will be saved
-print ("\nFiles will be downloaded to " + DOWNLOAD_PATH + "\n")
+print ("Files will be downloaded to " + DOWNLOAD_PATH + "\n")
 
 def HomePage():
     print("\n \nUUP Dump --------------------")
@@ -144,15 +152,15 @@ def extract(file, execute):
         sz.extractall(os.path.splitext(file)[0])
         directory = os.path.splitext(file)[0]
         filepath = os.path.join(os.path.splitext(file)[0], getExFileForOS())
+
         if platform == "linux" or platform == "linux2" or platform == "darwin":
             # Linux or OS X
             os.system("chmod -R +rx " + directory)
             os.system(filepath)
         elif platform == "win32":
-            # Windows...
+            # Windows
             os.startfile(filepath)
        
-
 def AskYesNo(prompt):
     regexFN = re.compile('^(?:y|n)$', re.IGNORECASE)
     while True:
