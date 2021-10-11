@@ -20,6 +20,9 @@ elif platform == "darwin":
 elif platform == "win32":
     # Windows...
     DOWNLOAD_PATH = os.path.dirname(os.path.realpath(__file__)) + "\\"
+    
+# Print the path where downloaded files will be saved
+print ("\nFiles will be downloaded to " + DOWNLOAD_PATH + "\n")
 
 def HomePage():
     print("\n \nUUP Dump --------------------")
