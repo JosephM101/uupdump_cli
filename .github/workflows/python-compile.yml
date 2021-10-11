@@ -60,7 +60,7 @@ jobs:
       - name: Create standalone build directory
         run: mkdir build/standalone
         
-      - name: Compile
+      - name: Compile standalone
         run: python -m nuitka --follow-imports --standalone --assume-yes-for-downloads --output-dir="build/standalone" uupdump_cli.py
         
       - name: Publish artifacts
