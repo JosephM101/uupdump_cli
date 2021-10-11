@@ -1,9 +1,12 @@
 from queue import Empty
 import sys
 from zipfile import ZipFile
+import py7zr
 import requests, re, os
 from requests.models import HTTPError
 from sys import platform
+
+prefer_py7zr = False
 
 # Welcome
 print("UUPDump CLI\n")
@@ -148,8 +151,13 @@ def download(id, language, edition):
 
 def extract(file, execute):
     if(file != Empty):
-        sz = ZipFile(file)
-        sz.extractall(os.path.splitext(file)[0])
+        if(prefer_py7zr):
+            archive = py7zr.SevenZipFile(file, mode='r')
+            archive.extractall(os.path.splitext(file)[0])
+        else:
+            sz = ZipFile(file)
+            sz.extractall(os.path.splitext(file)[0])
+
         directory = os.path.splitext(file)[0]
         filepath = os.path.join(os.path.splitext(file)[0], getExFileForOS())
 
