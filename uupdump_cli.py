@@ -7,10 +7,10 @@ from sys import platform
 
 # Definitions
 API_URL = "https://api.uupdump.net/"
-#DOWNLOAD_PATH = os.getcwd()
 
 DOWNLOAD_PATH = None
 
+# Figure out what OS the script is running on, and use that to determine the execution path
 if platform == "linux" or platform == "linux2":
     # linux
     DOWNLOAD_PATH = os.path.dirname(os.path.realpath(__file__)) + "/"
@@ -47,10 +47,6 @@ def LatestUpdatePage():
         latest_update_request = requests.get(API_URL+"/fetchupd.php", params=payload)
         response = latest_update_request.json()
         updates = response['response']['updateArray']
-
-        # for f in updates: 
-        #     length += 1
-        #     print (str(length) + ": " + f['updateTitle'], "("+f['foundBuild']+")")
 
         while True:
             length = 0
@@ -115,8 +111,8 @@ def LatestUpdatePage():
 
         print("")
         print("Downloading converter...")
-        #autodl=2 : download aria2 package
-        #autodl=2 : download aria2 + convert package
+#autodl=2 : download aria2 package
+#autodl=2 : download aria2 + convert package
         res = download(selectedId, def_language, selectedEdition)
         if(res != Empty):
             if(AskYesNo("Decompress and execute? [y/n]: ")):
