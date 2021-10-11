@@ -68,31 +68,3 @@ jobs:
         with:
           name: windows
           path: build/
-
-  build_macos:
-    runs-on: macos-10.13
-    steps:
-    - uses: actions/checkout@v2
-      
-    - name: Setup Python
-      uses: actions/setup-python@v2.2.2
-      with:
-        python-version: 3.8
-          
-    - name: Install Nuitka
-      run: pip install Nuitka
-        
-    - name: Install dependencies
-      run: pip install requests py7zr
-      
-    - name: Compile
-      run: mkdir build && python -m nuitka --follow-imports --onefile --assume-yes-for-downloads --output-dir="build/" --remove-output uupdump_cli.py
-       
-    - name: Compile standalone
-      run: mkdir build/standalone && python -m nuitka --follow-imports --standalone --assume-yes-for-downloads --output-dir="build/standalone" uupdump_cli.py
-        
-    - name: Publish artifacts
-      uses: actions/upload-artifact@v2.2.4
-      with:
-        name: macos
-        path: build/
