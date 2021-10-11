@@ -21,7 +21,7 @@ jobs:
         run: pip install Nuitka
         
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests py7zr
 
       - name: Compile
         run: mkdir build && python -m nuitka --follow-imports --onefile --assume-yes-for-downloads --output-dir="build/" --remove-output uupdump_cli.py
@@ -49,7 +49,7 @@ jobs:
         run: pip install Nuitka
         
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests py7zr
       
       - name: Create build directory
         run: mkdir build
@@ -83,7 +83,7 @@ jobs:
       run: pip install Nuitka
         
     - name: Install dependencies
-      run: pip install requests
+      run: pip install requests py7zr
       
     - name: Compile
       run: mkdir build && python -m nuitka --follow-imports --onefile --assume-yes-for-downloads --output-dir="build/" --remove-output uupdump_cli.py
