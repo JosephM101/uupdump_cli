@@ -26,3 +26,35 @@ jobs:
 
       - name: Compile
         run: python -m nuitka --follow-imports --standalone uupdump_cli.py
+        
+      - name: Publish artifacts
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: linux
+          path: uupdump_cli.dist/
+          
+  build_windows:
+    runs-on: windows-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Setup Python
+        uses: actions/setup-python@v2.2.2
+        with:
+          python-version: 3.8
+          
+      - name: Install Nuitka
+        run: pip install Nuitka
+        
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Compile
+        run: python -m nuitka --follow-imports --standalone uupdump_cli.py
+        
+      - name: Publish artifacts
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: linux
+          path: uupdump_cli.dist/
