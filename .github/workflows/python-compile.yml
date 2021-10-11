@@ -51,10 +51,10 @@ jobs:
         run: pip install requests
 
       - name: Compile
-        run: python -m nuitka --follow-imports --standalone --onefile --assume-yes-for-downloads uupdump_cli.py
+        run: python -m nuitka --follow-imports --onefile --assume-yes-for-downloads uupdump_cli.py
         
       - name: Publish artifacts
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: linux
+          name: windows
           path: uupdump_cli.dist/
