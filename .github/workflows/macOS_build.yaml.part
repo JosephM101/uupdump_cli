@@ -1,5 +1,10 @@
   build_macos:
     runs-on: macos-10.15
+    env:
+      # We need the official Python, because the GA ones only support newer macOS versions
+      # The deployment target is picked up by the Python build tools automatically
+      PYTHON_VERSION: 3.9.1
+      MACOSX_DEPLOYMENT_TARGET: 10.13
     steps:
     - uses: actions/checkout@v2
       
