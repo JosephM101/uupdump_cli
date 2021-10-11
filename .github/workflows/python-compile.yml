@@ -1,4 +1,3 @@
-
 name: Compile
 
 on:
@@ -20,4 +19,4 @@ jobs:
           python-version: 3.8
           
       - name: Install Nuitka
-        run: pip install Nuitka
+        run: python -m nuitka uupdump_cli.py
