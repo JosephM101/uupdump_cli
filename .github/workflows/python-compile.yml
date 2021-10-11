@@ -25,6 +25,9 @@ jobs:
 
       - name: Compile
         run: mkdir build && python -m nuitka --follow-imports --onefile --assume-yes-for-downloads --output-dir="build/" --remove-output uupdump_cli.py
+       
+      - name: Compile standalone
+        run: mkdir build/standalone && python -m nuitka --follow-imports --standalone --assume-yes-for-downloads --output-dir="build/standalone" uupdump_cli.py
         
       - name: Publish artifacts
         uses: actions/upload-artifact@v2.2.4
@@ -53,6 +56,12 @@ jobs:
         
       - name: Compile
         run: python -m nuitka --follow-imports --onefile --assume-yes-for-downloads --output-dir="build/" --remove-output uupdump_cli.py
+      
+      - name: Create standalone build directory
+        run: mkdir build/standalone
+        
+      - name: Compile
+        run: python -m nuitka --follow-imports --standalone --assume-yes-for-downloads --output-dir="build/standalone" uupdump_cli.py
         
       - name: Publish artifacts
         uses: actions/upload-artifact@v2.2.4
@@ -62,7 +71,6 @@ jobs:
 
   build_macos:
     runs-on: macos-10.15
-    
     steps:
     - uses: actions/checkout@v2
       
@@ -76,9 +84,12 @@ jobs:
         
     - name: Install dependencies
       run: pip install requests
-
+      
     - name: Compile
       run: mkdir build && python -m nuitka --follow-imports --onefile --assume-yes-for-downloads --output-dir="build/" --remove-output uupdump_cli.py
+       
+    - name: Compile standalone
+      run: mkdir build/standalone && python -m nuitka --follow-imports --standalone --assume-yes-for-downloads --output-dir="build/standalone" uupdump_cli.py
         
     - name: Publish artifacts
       uses: actions/upload-artifact@v2.2.4
