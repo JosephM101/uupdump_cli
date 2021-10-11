@@ -9,6 +9,8 @@ from sys import platform
 API_URL = "https://api.uupdump.net/"
 #DOWNLOAD_PATH = os.getcwd()
 
+DOWNLOAD_PATH = None
+
 if platform == "linux" or platform == "linux2":
     # linux
     DOWNLOAD_PATH = os.path.dirname(os.path.realpath(__file__)) + "/"
@@ -18,7 +20,6 @@ elif platform == "darwin":
 elif platform == "win32":
     # Windows...
     DOWNLOAD_PATH = os.path.dirname(os.path.realpath(__file__)) + "\\"
-
 
 def HomePage():
     print("\n \nUUP Dump --------------------")
@@ -236,6 +237,10 @@ def getExFileForOS():
     elif platform == "win32":
         # Windows...
         return "uup_download_windows.cmd"
+
+#----------------------------------
+#------Everything starts here------
+#----------------------------------
 
 # Start by making sure we can connect to the API
 print("Testing connection...")
