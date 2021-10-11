@@ -1,6 +1,8 @@
 # uupdump_cli
 #### A simple experimental command-line-interface for UUP Dump written in Python that uses the UUP Dump JSON API.
 
+[![Compile Python script](https://github.com/JosephM101/uupdump_cli/actions/workflows/python-compile.yml/badge.svg)](https://github.com/JosephM101/uupdump_cli/actions/workflows/python-compile.yml)
+
 ## Requirements
 **Developed and tested on Python 3.8**
 
