@@ -16,6 +16,11 @@ All downloaded files will be saved in the same directory as the python script.
 
 ------
 
+## Compiled Builds
+GitHub Actions is set up to compile binaries for Windows, macOS and Linux. You can find them as downloadable artifacts [here](https://github.com/JosephM101/uupdump_cli/actions).
+
+------
+
 # One-Line Run
 
 To automate the download and execution process, you need to call the script from a terminal. In that terminal, enter the following:
