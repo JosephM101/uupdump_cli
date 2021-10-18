@@ -17,7 +17,7 @@ All downloaded files will be saved in the same directory as the python script.
 ------
 
 ## Compiled Builds
-GitHub Actions is set up to compile binaries for Windows, macOS and Linux using Nuitka. You can find the binaries as downloadable artifacts [here](https://github.com/JosephM101/uupdump_cli/actions).
+GitHub Actions is set up to compile binaries for Windows and Linux (macOS is not currently supported) using Nuitka. You can find the binaries as downloadable artifacts [here](https://github.com/JosephM101/uupdump_cli/actions).
 
 ------
 
