@@ -4,20 +4,20 @@
 [![Compile Python script](https://github.com/JosephM101/uupdump_cli/actions/workflows/python-compile.yml/badge.svg)](https://github.com/JosephM101/uupdump_cli/actions/workflows/python-compile.yml)
 
 ## Requirements
-**Developed and tested on Python 3.8. Newer versions should work as well.** To check what version of Python you're running, open a terminal and type `python --version` or `python3 --version` (depending on your install). If Python is not installed on your machine, you can download it from the [official website](https://www.python.org/downloads/), or [download an automatically compiled binary](#automatically-compiled-builds).
+**Developed and tested on Python 3.8. Newer versions should work as well.** To check what version of Python you're running, open a terminal and type `python --version` or `python3 --version` (depending on your install). If Python is not installed on your machine, you can download it from the [official website](https://www.python.org/downloads/). Alternatively, you can [download an automatically compiled binary](#automatically-compiled-builds) of the script.
 
-To install requirements, run `pip install requests` in your terminal of choice. If you get an error like `pip: command not found`, then try `pip3`instead.
+The script requires `requests`. To install the requirements, run `pip install requests` in your terminal of choice. If you get an error like `pip: command not found`, then try `pip3` instead.
 
 
 ## How to use
 
 #### Simply run the script, and if UUPDump is not down (that happens sometimes), the script will display instructions to help you quickly get the update package you need.
-All downloaded files will be saved in the same directory as the python script.
+All downloaded files will be saved in the same directory as the Python script.
 
 ------
 
 ## Automatically compiled builds
-GitHub Actions is set up to compile binaries for Windows and Linux (macOS is not currently supported) using Nuitka. You can find the binaries as downloadable artifacts [here](https://github.com/JosephM101/uupdump_cli/actions).
+GitHub Actions is set up to compile binaries for Windows and Linux (macOS is not currently supported) using Nuitka. Useful if you don't have Python installed on your machine. You can find the binaries as downloadable artifacts [here](https://github.com/JosephM101/uupdump_cli/actions).
 
 ------
 
