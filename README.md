@@ -1,4 +1,11 @@
 # uupdump_cli
+## NOTE:
+As of December 17, 2022, this repository is, until further notice, not being maintained.
+Not only has it been a while since I've worked on this project, but it seems as though uupdump.net has been a bit unstable, fairly frequently going offline. Unfortunately, these are issues that are out of my control, and that is why, at least until further notice, I will be archiving this repository. 
+In the meantime, please do not try to use this tool. I'd suggest trying [gus33000's UUPMediaCreator](https://github.com/gus33000/UUPMediaCreator) tool.
+
+<hr>
+
 #### A simple experimental command-line-interface for UUP Dump written in Python that uses the UUP Dump JSON API.
 
 [![Compile Python script](https://github.com/JosephM101/uupdump_cli/actions/workflows/python-compile.yml/badge.svg)](https://github.com/JosephM101/uupdump_cli/actions/workflows/python-compile.yml)
